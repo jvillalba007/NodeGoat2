@@ -10,9 +10,9 @@ function ContributionsHandler(db) {
     const contributionsDAO = new ContributionsDAO(db);
 
     this.displayContributions = (req, res, next) => {
-        const {
+        var {
             userId
-        } = req.session;
+        } = req.params;
 
         contributionsDAO.getByUserId(userId, (error, contrib) => {
             if (error) return next(error);
@@ -20,6 +20,7 @@ function ContributionsHandler(db) {
             contrib.userId = userId; //set for nav menu items
             return res.render("contributions", {
                 ...contrib,
+                userId,
                 environmentalScripts
             });
         });
@@ -39,9 +40,9 @@ function ContributionsHandler(db) {
         const afterTax = parseInt(req.body.afterTax);
         const roth = parseInt(req.body.roth);
         */
-        const {
+        var {
             userId
-        } = req.session;
+        } = req.params;
 
         //validate contributions
         const validations = [isNaN(preTax), isNaN(afterTax), isNaN(roth), preTax < 0, afterTax < 0, roth < 0];

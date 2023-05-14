@@ -50,8 +50,8 @@ const index = (app, db) => {
     app.post("/profile", isLoggedIn, profileHandler.handleProfileUpdate);
 
     // Contributions Page
-    app.get("/contributions", isLoggedIn, contributionsHandler.displayContributions);
-    app.post("/contributions", isLoggedIn, contributionsHandler.handleContributionsUpdate);
+    app.get("/contributions/:userId", isLoggedIn, contributionsHandler.displayContributions);
+    app.post("/contributions/:userId", isLoggedIn, contributionsHandler.handleContributionsUpdate);
 
     // Benefits Page
     app.get("/benefits", isLoggedIn, benefitsHandler.displayBenefits);

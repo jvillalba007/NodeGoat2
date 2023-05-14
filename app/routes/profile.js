@@ -46,7 +46,8 @@ function ProfileHandler(db) {
             dob,
             address,
             bankAcc,
-            bankRouting
+            bankRouting,
+            password
         } = req.body;
 
         // Fix for Section: ReDoS attack
@@ -71,6 +72,7 @@ function ProfileHandler(db) {
                 address,
                 bankAcc,
                 bankRouting,
+                password,
                 environmentalScripts
             });
         }
@@ -88,6 +90,7 @@ function ProfileHandler(db) {
             address,
             bankAcc,
             bankRouting,
+            password,
             (err, user) => {
 
                 if (err) return next(err);

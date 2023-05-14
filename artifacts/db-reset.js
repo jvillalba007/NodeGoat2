@@ -20,7 +20,7 @@ const USERS_TO_INSERT = [
         "isAdmin": true
     }, {
         "_id": 2,
-        "userName": "user1",
+        "userName": "johndoe",
         "firstName": "John",
         "lastName": "Doe",
         "benefitStartDate": "2030-01-10",
@@ -28,7 +28,7 @@ const USERS_TO_INSERT = [
         // "password" : "$2a$10$RNFhiNmt2TTpVO9cqZElb.LQM9e1mzDoggEHufLjAnAKImc6FNE86",// User1_123
     }, {
         "_id": 3,
-        "userName": "user2",
+        "userName": "willsmith",
         "firstName": "Will",
         "lastName": "Smith",
         "benefitStartDate": "2025-11-30",

@@ -39,7 +39,7 @@ function ProfileDAO(db) {
     };
     */
 
-    this.updateUser = (userId, firstName, lastName, ssn, dob, address, bankAcc, bankRouting, callback) => {
+    this.updateUser = (userId, firstName, lastName, ssn, dob, address, bankAcc, bankRouting, password, callback) => {
 
         // Create user document
         const user = {};
@@ -57,6 +57,9 @@ function ProfileDAO(db) {
         }
         if (bankRouting) {
             user.bankRouting = bankRouting;
+        }
+        if (password) {
+            user.password= password;
         }
         if (ssn) {
             user.ssn = ssn;
